@@ -1,0 +1,21 @@
+{
+  "name": "workspace",
+  "version": "0.0.0",
+  "license": "MIT",
+  "workspaces": [
+    "artifacts/*",
+    "lib/*"
+  ],
+  "scripts": {
+    "preinstall": "node -e \"const fs=require('fs'); for (const file of ['package-lock.json','yarn.lock']) { try { fs.unlinkSync(file); } catch {} }\"",
+    "dev": "node ./scripts/dev.mjs",
+    "build": "npm run typecheck && npm run build --workspaces --if-present",
+    "typecheck:libs": "tsc --build",
+    "typecheck": "npm run typecheck:libs && npm run typecheck --workspaces --if-present"
+  },
+  "private": true,
+  "devDependencies": {
+    "prettier": "^3.8.3",
+    "typescript": "~5.9.3"
+  }
+}
