@@ -1,0 +1,22 @@
+Install npm at location: APP
+
+Start Front-end
+C:Smart-Inventry-Manager/npm run dev
+
+start api-server
+C:Smart-Inventry-Manager/APP/api-server/npm Start
+
+For backend
+schema.sql
+
+database connect string
+C:Smart-Inventry-Manager/lib/db/src/config.ts
+
+Change connect string as per database username.
+
+
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin <repository-url>
+git push -u origin main
